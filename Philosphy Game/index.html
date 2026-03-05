@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Which Roman Emperor Are You?</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== COOKIE CONSENT BANNER ===== -->
+  <div id="cookie-banner" class="cookie-banner hidden">
+    <div class="cookie-content">
+      <div class="cookie-icon">🍪</div>
+      <div class="cookie-text">
+        <p><strong>Cookie Notice</strong></p>
+        <p>We use cookies and local storage to remember your preferences and improve your experience. Under GDPR and similar regulations, we need your consent before storing data on your device.</p>
+      </div>
+      <div class="cookie-actions">
+        <button id="cookie-accept" class="btn btn-cookie-accept">Accept Cookies</button>
+        <button id="cookie-decline" class="btn btn-cookie-decline">Decline</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== START SCREEN ===== -->
+  <div id="start-screen" class="screen">
+    <div class="start-container">
+      <div class="start-icon">🏛️</div>
+      <h1 class="start-title">Which Roman Emperor Are You?</h1>
+      <p class="start-subtitle">Discover your imperial identity</p>
+      <div class="start-description">
+        <p>You'll face a series of dilemmas about power, war, justice, culture, character, and politics.
+           For each one, choose the side that resonates with you.</p>
+        <p>At the end, we'll reveal which Roman Emperor matches your personality —
+           based on how history's greatest rulers actually thought and ruled.</p>
+      </div>
+      <div class="branch-preview">
+        <span class="branch-pill" style="--pill-color: #C9A84C">👑 Power</span>
+        <span class="branch-pill" style="--pill-color: #D32F2F">⚔️ Warfare</span>
+        <span class="branch-pill" style="--pill-color: #5C6BC0">⚖️ Justice</span>
+        <span class="branch-pill" style="--pill-color: #00897B">🎭 Culture</span>
+        <span class="branch-pill" style="--pill-color: #8D6E63">🦅 Character</span>
+        <span class="branch-pill" style="--pill-color: #7B1FA2">👥 Politics</span>
+      </div>
+      <button id="start-btn" class="btn btn-primary btn-large">
+        Enter the Senate
+        <span class="btn-arrow">→</span>
+      </button>
+      <div class="admin-link-container">
+        <a href="admin.html" class="admin-link">🔒 Admin Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GAME SCREEN ===== -->
+  <div id="game-screen" class="screen hidden">
+    <div class="game-header">
+      <div class="progress-bar">
+        <div id="progress-fill" class="progress-fill"></div>
+      </div>
+      <div class="game-header-row">
+        <span id="card-count" class="card-count">1 / 30</span>
+        <button id="finish-btn" class="btn btn-ghost btn-small">Finish Now →</button>
+      </div>
+    </div>
+
+    <div class="card-container">
+      <div id="question-card" class="question-card">
+        <div id="card-branch" class="card-branch">👑 Power & Rule</div>
+        <p id="card-text" class="card-text"></p>
+        <p id="card-context" class="card-context"></p>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <button id="dislike-btn" class="btn btn-dislike">
+        <span class="btn-icon">👎</span>
+        <span id="dislike-btn-text" class="btn-label">Disagree</span>
+      </button>
+      <button id="like-btn" class="btn btn-like">
+        <span class="btn-icon">👍</span>
+        <span id="like-btn-text" class="btn-label">Agree</span>
+      </button>
+    </div>
+
+    <div class="keyboard-hint">
+      ← Left arrow to disagree · Right arrow to agree →
+    </div>
+  </div>
+
+  <!-- ===== RESULTS SCREEN ===== -->
+  <div id="results-screen" class="screen hidden">
+    <div class="results-container">
+      <div class="results-header">
+        <h2 class="results-label">Your Roman Emperor</h2>
+        <div id="emperor-icon-large" class="emperor-icon-large">🏛️</div>
+        <h1 id="emperor-name" class="type-title">Augustus</h1>
+        <p id="emperor-reign" class="emperor-reign">27 BC – 14 AD</p>
+        <p id="emperor-title" class="emperor-title-sub">The Architect of Empire</p>
+        <p id="emperor-tagline" class="type-subtitle">Patient · Strategic · Visionary · Disciplined</p>
+      </div>
+
+      <div class="result-gif-container">
+        <img id="result-gif" class="result-gif" src="" alt="Your emperor character" />
+      </div>
+
+      <p id="emperor-description" class="type-description"></p>
+
+      <div class="stats-section">
+        <h3 class="stats-title">🏆 Your Emperor Ranking</h3>
+        <p id="total-stats" class="total-stats"></p>
+        <div id="emperor-ranking" class="emperor-ranking"></div>
+      </div>
+
+      <div class="stats-section">
+        <h3 class="stats-title">📊 Category Breakdown</h3>
+        <div id="category-stats" class="branch-stats"></div>
+      </div>
+
+      <button id="play-again-btn" class="btn btn-primary btn-large">
+        Play Again
+        <span class="btn-arrow">↻</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
